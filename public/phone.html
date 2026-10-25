@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#fbf5ec">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <title>Atelier &amp; Bloom — Villager</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/css/common.css">
+  <link rel="stylesheet" href="/css/phone.css">
+</head>
+<body>
+  <div id="conn" class="conn" hidden>Reconnecting to the atelier…</div>
+  <div id="app">
+    <header id="topbar" hidden>
+      <div class="me"><div class="portrait" id="myPortrait"></div><div class="who"><b id="myName"></b><span id="myScore"></span></div></div>
+      <span class="code" id="myCode"></span>
+      <button class="iconbtn" id="watchBtn" aria-label="Watch the atelier" title="Watch the atelier">👀</button>
+      <button class="iconbtn" id="soundBtn" aria-label="Sound">🔊</button>
+      <button class="iconbtn" id="fsBtn" aria-label="Fullscreen">⛶</button>
+      <button class="iconbtn" id="exitBtn" aria-label="Leave the atelier" title="Leave the atelier">🚪</button>
+    </header>
+    <div id="timer" hidden><div id="timerFill"></div></div>
+    <main id="screen"></main>
+    <section id="greenhouse" hidden></section>
+    <section id="dock"></section>
+  </div>
+  <div id="toasts"></div>
+  <section id="watch" hidden>
+    <canvas id="watchCanvas"></canvas>
+    <div class="watch-bar">
+      <span class="watch-title">👀 Live from the atelier</span>
+      <button class="iconbtn" id="watchBig" aria-label="Bigger view">⤢</button>
+      <button class="iconbtn" id="watchClose" aria-label="Close the view">✕</button>
+    </div>
+    <div class="watch-loading" id="watchLoading">Opening the shop door…</div>
+  </section>
+  <script type="importmap">{ "imports": { "three": "/vendor/three/three.module.js" } }</script>
+  <script type="module" src="/js/phone/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "Atelier & Bloom",
+  "short_name": "Atelier",
+  "start_url": "/play",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#fbf5ec",
+  "theme_color": "#fbf5ec",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

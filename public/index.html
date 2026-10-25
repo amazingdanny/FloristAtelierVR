@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf5ec">
+  <title>Atelier &amp; Bloom</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/css/common.css">
+  <style>
+    main { max-width: 760px; margin: 0 auto; padding: 28px 16px 40px; display: flex; flex-direction: column; gap: 16px; }
+    h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); margin: 10px 0 0; text-align: center; line-height: 1; }
+    .tagline { text-align: center; color: var(--ink-soft); font-weight: 700; margin: 0; }
+    .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 600px) { .choices { grid-template-columns: 1fr; } }
+    a.choice { text-decoration: none; color: var(--ink); display: flex; flex-direction: column; gap: 6px; padding: 22px; }
+    a.choice b { font-family: 'Fredoka'; font-size: 1.5rem; }
+    a.choice span { color: var(--ink-soft); font-weight: 600; }
+    a.choice .emoji { font-size: 2.6rem; }
+    a.choice:active { transform: translateY(2px); }
+    ol { margin: 6px 0 0; padding-left: 20px; line-height: 1.55; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Atelier &amp; Bloom</h1>
+    <p class="tagline">A cozy floral party game · 1 florist in VR · up to 8 villagers on phones</p>
+    <div class="choices">
+      <a class="card choice" href="/florist"><span class="emoji">🥽</span><b>I'm the Florist</b><span>Open this on the VR headset (or a laptop to play with the mouse).</span></a>
+      <a class="card choice" href="/play"><span class="emoji">📱</span><b>I'm a Villager</b><span>Join from your phone with the 4-letter atelier code.</span></a>
+    </div>
+    <div class="card">
+      <b class="display" style="font-size:1.2rem">How a round works (≈1½ minutes)</b>
+      <ol>
+        <li><b>A villager walks in</b> — one phone player is the customer and picks a heartfelt request: <i>“I need something to say I'm sorry.”</i></li>
+        <li><b>The florist arranges</b> — grab stems from the buckets, trim with scissors, wrap in paper, tie a silk ribbon, or bend wire into a flower crown. Every flower has a meaning!</li>
+        <li><b>Garden Sprites help… or meddle</b> — the other phones cross-breed glowing hybrid flowers and send them to the florist (points if used!), or send a cheeky bee to steal a stem.</li>
+        <li><b>Hand it over</b> — the customer rates it with hearts and the secret mood is revealed.</li>
+      </ol>
+    </div>
+  </main>
+</body>
+</html>

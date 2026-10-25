@@ -1,0 +1,19 @@
+{
+  "name": "atelier-and-bloom",
+  "version": "1.0.0",
+  "description": "Atelier & Bloom - a cozy VR party game: 1 florist in WebXR, up to 8 villagers on phones. WebSocket multiplayer.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "cert": "node scripts/make-cert.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "ws": "^8.18.0"
+  }
+}

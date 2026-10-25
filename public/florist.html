@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fbf5ec">
+  <title>Atelier &amp; Bloom — Florist</title>
+  <link rel="stylesheet" href="/css/common.css">
+  <style>
+    html, body { overflow: hidden; }
+    #c { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; touch-action: none; }
+    #intro { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 5;
+      background: rgba(251,245,236,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    #intro[hidden] { display: none; }
+    .intro-card { max-width: 880px; width: 100%; display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; align-items: center; }
+    @media (max-width: 760px) { .intro-card { grid-template-columns: 1fr; } .qrbox { display: none; } }
+    .intro-card h1 { font-size: 2.8rem; margin: 0; line-height: 1; }
+    .intro-card .sub { color: var(--ink-soft); font-weight: 700; margin: 6px 0 16px; }
+    .buttons { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .codebig { font-family: 'Fredoka'; font-weight: 700; font-size: 3.4rem; letter-spacing: 10px; color: var(--rose-deep); line-height: 1; }
+    .qrbox { text-align: center; }
+    .qrbox img { width: 220px; height: 220px; background: #fff; border-radius: 20px; padding: 10px; box-shadow: var(--shadow); }
+    .url { font-family: 'Fredoka'; font-size: 1.15rem; word-break: break-all; }
+    .small { font-size: .88rem; color: var(--ink-soft); line-height: 1.4; }
+    #hud { position: fixed; left: 12px; top: 12px; z-index: 4; display: flex; gap: 8px; align-items: center; }
+    #hud[hidden] { display: none; }
+    .pill { background: rgba(255,250,242,.9); border-radius: 999px; padding: 8px 14px; font-weight: 800; box-shadow: var(--shadow); font-size: .9rem; }
+    .pill b { font-family: 'Fredoka'; letter-spacing: 3px; color: var(--rose-deep); font-size: 1.05rem; }
+    .iconbtn { width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,250,242,.9); box-shadow: var(--shadow); font-size: 1.1rem; cursor: pointer; }
+    #help { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); z-index: 4; text-align: center; }
+    #help[hidden] { display: none; }
+    #tip { position: fixed; z-index: 6; pointer-events: none; background: rgba(79,64,88,.92); color: #fff; padding: 6px 12px; border-radius: 12px; font-weight: 700; font-size: .9rem; white-space: nowrap; transform: translate(14px, 14px); }
+    #tip[hidden] { display: none; }
+    .warn { background: #fde2e8; border-radius: 14px; padding: 8px 12px; font-size: .88rem; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div id="intro">
+    <div class="card intro-card">
+      <div>
+        <h1>Atelier &amp; Bloom</h1>
+        <div class="sub">You are the Florist. Put on the headset — your friends join on their phones.</div>
+        <div class="small">Villagers join at</div>
+        <div class="url" id="joinUrl">…</div>
+        <div class="small" style="margin-top:8px">Atelier code</div>
+        <div class="codebig" id="code">····</div>
+        <div class="buttons">
+          <button class="btn big" id="vrBtn" disabled>Checking for VR…</button>
+          <button class="btn lilac big" id="arBtn" hidden>Enter mixed reality (passthrough)</button>
+          <button class="btn ghost big" id="deskBtn">Play on this screen (mouse)</button>
+          <button class="btn ghost" id="closeRoomBtn">🚪 Close this atelier</button>
+        </div>
+        <p class="small" id="xrNote" style="margin:10px 0 0"></p>
+      </div>
+      <div class="qrbox"><img id="qr" alt="QR code to join"><div class="small" style="margin-top:8px">Scan to join as a villager</div></div>
+    </div>
+  </div>
+  <div id="hud" hidden>
+    <span class="pill">Code <b id="hudCode"></b></span>
+    <span class="pill" id="hudPlayers">0 villagers</span>
+    <button class="iconbtn" id="soundBtn" title="Sound">🔊</button>
+    <button class="iconbtn" id="fsBtn" title="Fullscreen">⛶</button>
+    <button class="iconbtn" id="menuBtn" title="Menu">☰</button>
+    <button class="iconbtn" id="exitBtn" title="Close the atelier">🚪</button>
+  </div>
+  <div id="help" class="pill" hidden>Click flowers, tools &amp; the bell · drag to look around · scroll to zoom</div>
+  <div id="tip" hidden></div>
+  <script type="importmap">{ "imports": { "three": "/vendor/three/three.module.js" } }</script>
+  <script type="module" src="/js/florist/main.js"></script>
+</body>
+</html>
