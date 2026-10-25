@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: atelier-and-bloom
+    name: FloristAtelier
     runtime: node
     plan: free
     buildCommand: npm install
